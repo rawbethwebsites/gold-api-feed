@@ -66,18 +66,44 @@ The skill mirrors the structure of a real trading firm — analyst teams debate,
 
 ---
 
+## Getting Your API Key
+
+This skill fetches live prices from [gold-api.com](https://gold-api.com). You need a free API key to use it.
+
+### Step 1 — Create your account
+
+Go to **[https://gold-api.com](https://gold-api.com)** and click **Sign Up** (it's free).
+
+### Step 2 — Get your key
+
+After signing in, visit **[https://gold-api.com/docs](https://gold-api.com/docs)** — your API key is shown in the authentication section of the documentation once you're logged in.
+
+### Step 3 — Add it to your project
+
+Copy `.env.example` to `.env` and paste your key:
+
+```bash
+cp .env.example .env
+```
+
+```env
+GOLD_API_KEY=your_api_key_here
+```
+
+The skill will raise a clear error if the key is missing or invalid, pointing you back to [gold-api.com](https://gold-api.com).
+
+---
+
 ## Installation
 
 ### Prerequisites
 
 - Python 3.9+
-- `requests` and `aiohttp`
+- `aiohttp` and `requests`
 
 ```bash
-pip install requests aiohttp
+pip install aiohttp requests
 ```
-
-No API key required — data from [gold-api.com](https://gold-api.com) (free, no auth).
 
 ---
 
